@@ -1,4 +1,4 @@
-// DYNAMIC PHANTOM METRIC: SUPERLUMINAL INJECTION & TRANSIENT BRAKING
+// DYNAMIC PHANTOM METRIC: ULTRA-RELATIVISTIC INJECTION & TRANSIENT BRAKING
 double current_a = pvecback[pba->index_bg_a];
 double damping_factor = pba->a_eq / current_a;
 double K_phantom = 0.66688 * (a_prime_over_a * a_prime_over_a);
