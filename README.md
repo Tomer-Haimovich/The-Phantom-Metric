@@ -43,7 +43,7 @@ where $X \equiv -\frac{1}{2}g^{\mu\nu}\nabla_\mu\phi\nabla_\nu\phi$, and the rel
 
 ## 2. Part II: Early-Universe Cosmological Audit (`CLASS v3.4.0` & `MCMC`)
 
-In [`LambdaTSM_ZeroParam_Package/`](./LambdaTSM_ZeroParam_Package/), the exact geometric source term is injected into the decoupling baryonic Euler equation (`tca_off` in `source/perturbations.c`):
+In `LambdaTSM_ZeroParam_Package/`, the exact geometric source term is injected into the decoupling baryonic Euler equation (`tca_off` in `source/perturbations.c`):
 
 $$\theta_b' = -\mathcal{H}\theta_b + c_s^2 k^2\delta_b + k^2\Psi + R\tau_c^{-1}(\theta_\gamma - \theta_b) - \mathcal{K}_{\text{phantom}}(k,a)\delta_b - \Gamma_{\text{active}}(k,a,\theta_b)\theta_b$$
 
@@ -113,3 +113,64 @@ All empirical datasets (`SPARC_Data.xlsx`, `Rotmod_LTG.zip`, `SLACS_Phantom_Metr
 ### Prerequisites
 ```bash
 pip install numpy scipy pandas matplotlib openpyxl cython
+A. Reproduce Late-Universe Audits (SPARC, SLACS, CLASH)
+Run any of the standalone verification scripts directly from the root directory:
+
+Bash
+# 1. Verify Bulge-Less Galaxy NGC 2403 (R^2 = 0.9694, M/L = 0.46)
+python SPARC_NGC2403_Code.py
+
+# 2. Verify Unfiltered 175 SPARC Galaxies with Universally Locked M/L = 0.46 (R^2 = 0.9150)
+python "SPARC_Universal Global_175G_Code.py"
+
+# 3. Verify 175 SPARC Galaxies within Physical Stellar Bounds M/L in [0.1, 1.0] (R^2 = 0.9698)
+python "SPARC_Universal Global_175G_M-L_Code.py"
+
+# 4. Verify 100 SLACS Elliptical Strong Gravitational Lenses (R^2 = 0.9917)
+python SLACS_100_Code.py
+
+# 5. Verify CLASH Galaxy Clusters Strong Lensing (R^2_1:1 = 0.9710)
+python Clash_25_Code.py
+B. Reproduce Early-Universe CLASS Boltzmann & MCMC Audits (LambdaTSM_ZeroParam_Package)
+To compile the modified CLASS v3.4.0 C engine and run the full Boltzmann & MCMC verification suite:
+
+Bash
+# 1. Clone official CLASS v3.4.0 and inject the LambdaTSM C modules
+git clone [https://github.com/lesgourg/class_public.git](https://github.com/lesgourg/class_public.git)
+cd class_public
+cp ../LambdaTSM_ZeroParam_Package/background.c source/background.c
+cp ../LambdaTSM_ZeroParam_Package/perturbations.c source/perturbations.c
+
+# 2. Compile CLASS and its Python wrapper (classy)
+make clean && make -j4
+cd python && python setup.py install --user && cd ../../LambdaTSM_ZeroParam_Package
+
+# 3. Run the 4-Panel Planck 2018 CMB (TT, TE, EE) & P(k) Zero-Parameter Audit
+python audit_phantom_full.py
+
+# 4. Run the BBN Expansion Proof (z = 0 -> 10^9, dH/H = 0.00000%)
+python phase1_calibrate_and_bbn.py
+
+# 5. Run / Resume the 5-Parameter Ensemble MCMC Engine (or inspect mcmc_audit_report.txt)
+python phase2_mcmc_engine.py
+Citation
+If you use this code, data, or theoretical framework in your research, please cite:
+
+קטע קוד
+@article{Haimovich2026_Part1,
+  author  = {Haimovich, Tomer},
+  title   = {Topological saturation of spatial metrics unifies galactic kinematics and strong lensing},
+  year    = {2026},
+  month   = oct,
+  doi     = {10.5281/zenodo.23490367},
+  url     = {[https://doi.org/10.5281/zenodo.23490367](https://doi.org/10.5281/zenodo.23490367)}
+}
+
+@article{Haimovich2026_Part2,
+  author  = {Haimovich, Tomer},
+  title   = {The Topological Saturation Model ($\Lambda$TSM): Resolving the Cosmological Horizon, CMB Acoustic Power Spectra, and Late-Universe Structure via Zero-Parameter Covariant DBI Field Theory},
+  year    = {2026},
+  month   = oct,
+  doi     = {10.5281/zenodo.23490320},
+  url     = {[https://doi.org/10.5281/zenodo.23490320](https://doi.org/10.5281/zenodo.23490320)}
+}
