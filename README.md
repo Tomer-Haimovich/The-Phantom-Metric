@@ -112,8 +112,6 @@ All empirical datasets (`SPARC_Data.xlsx`, `Rotmod_LTG.zip`, `SLACS_Phantom_Metr
 
 ### Prerequisites
 
-```bash
-pip install numpy scipy pandas matplotlib openpyxl cython
 
 A. Reproduce Late-Universe Audits (SPARC, SLACS, CLASH)
 Run any of the standalone verification scripts directly from the root directory:
@@ -175,3 +173,5 @@ If you use this code, data, or theoretical framework in your research, please ci
   doi     = {10.5281/zenodo.23490320},
   url     = {https://doi.org/10.5281/zenodo.23490320}
 }
+```bash
+pip install numpy scipy pandas matplotlib openpyxl cython
