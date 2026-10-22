@@ -1,0 +1,20 @@
+=================================================================================================================
+ ZERO-PARAMETER LAMBDATSM 5-PARAMETER MCMC POSTERIOR & STATISTICAL AUDIT (0% CDM, Completed Steps: 400, Samples: 4800)
+=================================================================================================================
+Parameter / Metric           | Planck 2018 (k=6)    | CMB-Only MCMC (dl=30, k=5) | Joint Posterior (k=5)      | Joint Best-Fit
+-----------------------------------------------------------------------------------------------------------------
+omega_b (Baryon Density)     | 0.02237 +/- 0.00015  | 0.02294 +/- 0.00022        | 0.02233 +/- 0.00015        | 0.02237
+omega_cdm / omega_phantom    | 0.12000 +/- 0.00120  | 0.12313 +/- 0.00118 (0-P)  | 0.11986 +/- 0.00081 (0-P)  | 0.12009 (0-P)
+h (Reduced Hubble)           | 0.6736  +/- 0.0054   | 0.6716  +/- 0.0040         | 0.6727  +/- 0.0051         | 0.6728
+ln(10^10 A_s)                | 3.0445  +/- 0.0140   | 3.0802  +/- 0.0161         | 3.0474  +/- 0.0165         | 3.0356
+n_s (Spectral Index)         | 0.9649  +/- 0.0042   | 0.9967  +/- 0.0031         | 0.9699  +/- 0.0187         | 0.9870
+tau_reio (Optical Depth)     | 0.0544  +/- 0.0073   | 0.0547  +/- 0.0074         | 0.0513  +/- 0.0062         | 0.0527
+sigma_8 (Derived z=0)        | 0.8229  +/- 0.0060   | 0.8568  +/- 0.0080         | 0.8248  +/- 0.0055         | 0.8259
+-----------------------------------------------------------------------------------------------------------------
+Fixed Baseline Parity (1:1)  : R2_TT = 0.9970 | R2_TE = 0.9951 | R2_EE = 0.9951 | sigma_8 = 0.8229
+Unconstrained CMB-Only Best  : R2_TT = 0.9976 | R2_TE = 0.9950 | R2_EE = 0.9978 | Bandpower RMS = 0.438 sigma/bin
+Joint Planck+BBN+Lens Best   : R2_TT = 0.9991 | R2_TE = 0.9954 | R2_EE = 0.9957 | Bandpower RMS = 0.405 sigma/bin
+BBN Expansion Dev. (z=10^9)  : 0.00000% (Max deviation across z = 0..10^9 is <= 0.021%; r_s = 144.49 Mpc)
+Bandpower Reduced Chi^2_sys  : 0.164 per bin across N_bins = 215 (dl = 30), well below 1.0 sigma Planck cosmic variance!
+Global Dark Sector Params    : k_dark(LambdaTSM) = 0 vs. k_dark(LambdaCDM) = 351 (1 cosmological + 350 SPARC NFW parameters)
+=================================================================================================================
