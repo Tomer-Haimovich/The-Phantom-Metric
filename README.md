@@ -112,11 +112,12 @@ All empirical datasets (`SPARC_Data.xlsx`, `Rotmod_LTG.zip`, `SLACS_Phantom_Metr
 
 ### Prerequisites
 
+<pre><code>pip install numpy scipy pandas matplotlib openpyxl cython</code></pre>
 
-A. Reproduce Late-Universe Audits (SPARC, SLACS, CLASH)
+### A. Reproduce Late-Universe Audits (SPARC, SLACS, CLASH)
 Run any of the standalone verification scripts directly from the root directory:
 
-# 1. Verify Bulge-Less Galaxy NGC 2403 (R^2 = 0.9694, M/L = 0.46)
+<pre><code># 1. Verify Bulge-Less Galaxy NGC 2403 (R^2 = 0.9694, M/L = 0.46)
 python SPARC_NGC2403_Code.py
 
 # 2. Verify Unfiltered 175 SPARC Galaxies with Universally Locked M/L = 0.46 (R^2 = 0.9150)
@@ -129,12 +130,12 @@ python "SPARC_Universal Global_175G_M-L_Code.py"
 python SLACS_100_Code.py
 
 # 5. Verify CLASH Galaxy Clusters Strong Lensing (R^2_1:1 = 0.9710)
-python Clash_25_Code.py
+python Clash_25_Code.py</code></pre>
 
-B. Reproduce Early-Universe CLASS Boltzmann & MCMC Audits (LambdaTSM_ZeroParam_Package)
-To compile the modified CLASS v3.4.0 C engine and run the full Boltzmann & MCMC verification suite:
+### B. Reproduce Early-Universe CLASS Boltzmann & MCMC Audits (`LambdaTSM_ZeroParam_Package`)
+To compile the modified **CLASS v3.4.0** C engine and run the full Boltzmann & MCMC verification suite:
 
-# 1. Clone official CLASS v3.4.0 and inject the LambdaTSM C modules
+<pre><code># 1. Clone official CLASS v3.4.0 and inject the LambdaTSM C modules
 git clone https://github.com/lesgourg/class_public.git
 cd class_public
 cp ../LambdaTSM_ZeroParam_Package/background.c source/background.c
@@ -151,12 +152,15 @@ python audit_phantom_full.py
 python phase1_calibrate_and_bbn.py
 
 # 5. Run / Resume the 5-Parameter Ensemble MCMC Engine (or inspect mcmc_audit_report.txt)
-python phase2_mcmc_engine.py
+python phase2_mcmc_engine.py</code></pre>
 
-Citation
+---
+
+## Citation
+
 If you use this code, data, or theoretical framework in your research, please cite:
 
-@article{Haimovich2026_Part1,
+<pre><code>@article{Haimovich2026_Part1,
   author  = {Haimovich, Tomer},
   title   = {Topological saturation of spatial metrics unifies galactic kinematics and strong lensing},
   year    = {2026},
@@ -172,6 +176,4 @@ If you use this code, data, or theoretical framework in your research, please ci
   month   = oct,
   doi     = {10.5281/zenodo.23490320},
   url     = {https://doi.org/10.5281/zenodo.23490320}
-}
-```bash
-pip install numpy scipy pandas matplotlib openpyxl cython
+}</code></pre>
