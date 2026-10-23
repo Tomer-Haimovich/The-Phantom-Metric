@@ -36,7 +36,7 @@ where $X \equiv -\frac{1}{2}g^{\mu\nu}\nabla_\mu\phi\nabla_\nu\phi$, and the rel
 | **3D Spheroidal Gating** | $a_{0,\text{eff}}(\eta) = a_0\sqrt{1 - \eta^2}$ | $\in [0, a_0]$ | Maclaurin spheroid eccentricity ($\eta = b/a$); vanishes for $\eta \to 1$ |
 | **Early-Universe Density Ratio** | $\frac{\omega_{\text{phantom}}}{\omega_b} = \frac{16}{3}\left(1 + \frac{1}{16\pi^2}\right)$ | $5.367134$ | $D^2/(D-1) = 16/3$ bulk-to-hypersurface flux + 1-loop $S^3$ horizon $(4\pi)^{-2}$ |
 | **Derived Phantom Density** | $\omega_{\text{phantom}} = 5.367134 \times \omega_b$ | $0.120062$ | Evaluated at Planck $\omega_b = 0.02237$ (**matches Planck $\omega_{\text{cdm}} = 0.1200$ to 0.05%**) |
-| **3D Maclaurin Elasticity** | $\mathcal{K}_0 = \hat{k}^i\hat{k}^j\left(\hat{k}_i\hat{k}_j - \frac{1}{3}\delta_{ij}\right)$ | $\frac{2}{3} \approx 0.6667$ | Trace-free longitudinal shear projection in $d=3$ spatial dimensions |
+| **3D Maclaurin Elasticity** | $\mathcal{K}_{0} = \hat{k}^{i} \hat{k}^{j} ( \hat{k}_{i} \hat{k}_{j} - \frac{1}{3} \delta_{ij} )$ | $\frac{2}{3} \approx 0.6667$ | Trace-free longitudinal shear projection in $d=3$ spatial dimensions |
 | **Horizon Impedance Damping** | $\Gamma_0 = \frac{1}{2 \cdot 4\pi}$ | $\frac{1}{8\pi} \approx 0.03979\text{ Mpc}^{-1}$ | Inverse Einstein coupling $8\pi$ (asymmetric braking for $\theta_b > 0$) |
 
 ---
