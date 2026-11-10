@@ -1,23 +1,23 @@
 # The Phantom Metric & Topological Saturation Model ($\Lambda\text{TSM}$)
 
-[![Zenodo Part I](https://img.shields.io/badge/Zenodo_Part_I_(Astrophysics)-10.5281%2Fzenodo.23490367-blue.svg)](https://doi.org/10.5281/zenodo.23490367)
-[![Zenodo Part II](https://img.shields.io/badge/Zenodo_Part_II_(Cosmology)-10.5281%2Fzenodo.23490320-blue.svg)](https://doi.org/10.5281/zenodo.23490320)
+[![Zenodo Part I](https://img.shields.io/badge/Zenodo_Part_I_(Astrophysics)-10.5281%2Fzenodo.23490367-blue.svg)](https://doi.org/10.5281/zenodo.24098753)
+[![Zenodo Part II](https://img.shields.io/badge/Zenodo_Part_II_(Cosmology)-10.5281%2Fzenodo.23490320-blue.svg)](https://doi.org/10.5281/zenodo.24098774)
 [![Boltzmann Solver](https://img.shields.io/badge/CLASS-v3.4.0_(C_%2F_Cython)-success.svg)](https://github.com/lesgourg/class_public)
 [![Python](https://img.shields.io/badge/Python-3.9%2B-yellow.svg)](https://www.python.org/)
 [![Dark Matter Parameters](https://img.shields.io/badge/Dark_Matter_Free_Parameters-0-critical.svg)](#)
 
 **Author:** Tomer Haimovich  
-** Preprints & Permanent Archives:**
-* **Part I (Late-Universe Kinematics, Strong Lensing & 57-Eq. Covariant Supplementary Proofs):** [`Topological_Saturation_of_Spatial_Metrics.pdf`](./Topological_Saturation_of_Spatial_Metrics.pdf) — [DOI: 10.5281/zenodo.23490367](https://doi.org/10.5281/zenodo.23490367)
-* **Part II (Early-Universe CMB Spectra, BBN, Linear Matter Power Spectrum & 5-Parameter MCMC):** [`The_Topological_Saturation_Model.pdf`](./The_Topological_Saturation_Model.pdf) — [DOI: 10.5281/zenodo.23490320](https://doi.org/10.5281/zenodo.23490320)
+**Preprints & Permanent Archives:**
+* **Part I (Late-Universe Kinematics, Strong Lensing & Covariant Supplementary Proofs):** [`Topological_Saturation_of_Spatial_Metrics.pdf`](./Topological_Saturation_of_Spatial_Metrics.pdf) — [DOI: 10.5281/zenodo.24098753](https://doi.org/10.5281/zenodo.24098753)
+* **Part II (Early-Universe CMB Spectra, BBN, Linear Matter Power Spectrum & 5-Parameter MCMC):** [`The_Topological_Saturation_Model.pdf`](./The_Topological_Saturation_Model.pdf) — [DOI: 10.5281/zenodo.24098774](https://doi.org/10.5281/zenodo.24098774)
 
 ---
 
 ## Executive Summary
 
-Standard cosmology ($\Lambda\text{CDM}$) relies on an undiscovered non-baryonic particle species—Cold Dark Matter (CDM)—requiring $k_{\text{dark}} = 351$ free parameters across the Planck CMB ($\omega_{\text{cdm}}$) and the 175 SPARC galaxies ($2 \times 175$ NFW halo parameters $\{M_{200}, c_{200}\}$).
+Standard cosmology ($\Lambda\text{CDM}$) relies on an undiscovered non-baryonic particle species—Cold Dark Matter (CDM)—requiring $k_{\text{dark}} = 351$ free parameters across the Planck CMB ($\omega_{\text{cdm}}$) and the 175 SPARC galaxies ($2 \times 175$ NFW halo parameters $\{M_{200}, c_{200}\}$), in addition to $16\text{--}21$ free halo and subhalo parameters per lensing cluster.
 
-This repository provides the complete analytical derivations, C source code modifications for the **CLASS Boltzmann solver (`v3.4.0`)**, Markov Chain Monte Carlo (**MCMC**) chains, and Python verification scripts for the **Topological Saturation Model ($\Lambda\text{TSM}$)** and **The Phantom Metric**. Derived from a four-dimensional covariant **Dirac–Born–Infeld (DBI)** scalar-tensor action coupled to the causal Hubble horizon, the framework demonstrates that when the spacetime metric reaches its topological saturation limit ($2X \to M^4$), the resulting metric deformation generates an emergent pressureless stress-energy tensor ($w_{\text{eff}} \to 0, c_s^2 \to 0$) and a scale-dependent acoustic impedance—reproducing **both early-universe cosmology and late-universe galactic/cluster dynamics with 0% Cold Dark Matter and ZERO free dark-matter parameters ($k_{\text{dark}} = 0$)**.
+This repository provides the complete analytical derivations, C source code modifications for the **CLASS Boltzmann solver (`v3.4.0`)**, Markov Chain Monte Carlo (**MCMC**) chains, and Python verification scripts for the **Topological Saturation Model ($\Lambda\text{TSM}$)** and **The Phantom Metric**. Derived from a four-dimensional covariant **Dirac–Born–Infeld (DBI)** scalar-tensor action coupled to the causal Hubble horizon, the framework demonstrates that when the spacetime metric reaches its topological saturation limit ($2|X| \to M^4$), the resulting metric deformation generates an emergent pressureless stress-energy tensor ($w_{\text{eff}} \to 0, c_s^2 \to 0$) and a scale-dependent acoustic impedance—reproducing **both early-universe cosmology and late-universe galactic/cluster dynamics with 0% Cold Dark Matter and ZERO free dark-matter parameters ($k_{\text{dark}} = 0$)**.
 
 ---
 
@@ -25,9 +25,9 @@ This repository provides the complete analytical derivations, C source code modi
 
 We model the macroscopic deformation of the four-dimensional Lorentzian manifold $\mathcal{M}_4$ via the Einstein–Dirac–Born–Infeld action:
 
-$$S = \int d^4x \sqrt{-g} \left[ \frac{R - 2\Lambda}{16\pi G} - M^4(\phi)\sqrt{1 - \frac{2X}{M^4(\phi)}} + M^4(\phi) - V(\phi) + \mathcal{L}_m(\psi_m, g_{\mu\nu}) \right]$$
+$$S = \int d^4x \sqrt{-g} \left[ \frac{R - 2\Lambda}{16\pi G} - M^4(\phi)\sqrt{1 - \frac{2|X|}{M^4(\phi)}} + M^4(\phi) - V(\phi) + \mathcal{L}_m(\psi_m, g_{\mu\nu}) \right]$$
 
-where $X \equiv -\frac{1}{2}g^{\mu\nu}\nabla_\mu\phi\nabla_\nu\phi$, and the relativistic DBI Lorentz-saturation factor (inverse sound speed) is $\gamma \equiv (1 - 2X/M^4)^{-1/2} = c_s^{-1}$. Every governing constant across cosmic epochs is fixed analytically by spacetime geometry:
+where $X \equiv -\frac{1}{2}g^{\mu\nu}\nabla_\mu\phi\nabla_\nu\phi$, and the relativistic DBI Lorentz-saturation factor (inverse sound speed) is $\gamma \equiv (1 - 2|X|/M^4)^{-1/2} = c_s^{-1}$. Every governing constant across cosmic epochs is fixed analytically by spacetime geometry:
 
 | Physical Regime | Exact Analytical Constant | Numerical Value | First-Principles Geometric Origin |
 | :--- | :--- | :--- | :--- |
@@ -47,7 +47,7 @@ In `LambdaTSM_ZeroParam_Package/`, the exact geometric source term is injected i
 
 $$\theta_b' = -\mathcal{H}\theta_b + c_s^2 k^2\delta_b + k^2\Psi + R\tau_c^{-1}(\theta_\gamma - \theta_b) - \mathcal{K}_{\text{phantom}}(k,a)\delta_b - \Gamma_{\text{active}}(k,a,\theta_b)\theta_b$$
 
-$$\mathcal{K}_{\text{phantom}}(k,a) = \frac{2}{3}\mathcal{H}^2\left(\frac{k^2}{k^2+\mathcal{H}^2}\right)\exp\left[-\left(\frac{a}{\pi a_{\text{eq}}}\right)^4\right], \quad \Gamma_{\text{active}} = \frac{1}{8\pi}\left(\frac{a_{\text{eq}}}{a}\right)\left(\frac{k^2}{k^2+\mathcal{H}^2}\right)\exp\left[-\left(\frac{a}{\pi a_{\text{eq}}}\right)^4\right]\Theta(\theta_b)$$
+$$\mathcal{K}_{\text{phantom}}(k,a) = \frac{2}{3}\mathcal{H}^2\left(\frac{k^2}{k^2+\mathcal{H}^2}\right)\exp\left[-\left(\frac{a}{\pi a_{\text{eq}}}\right)^4\right], \quad \Gamma_{\text{active}} = \frac{1}{8\pi}\left(\frac{a_{\text{eq}}}{a}\right)\left(\frac{k^2}{k^2+\mathcal{H}^2}\right)\exp\left[-\left(\frac{a}{\pi a_{\text{eq}}}\right)^4\right]\mathcal{S}(\theta_b)$$
 
 ### Quantitative Results vs. Planck 2018 Benchmark ($\ell \in [50, 2500]$, 0% CDM)
 
@@ -75,49 +75,51 @@ $$\mathcal{K}_{\text{phantom}}(k,a) = \frac{2}{3}\mathcal{H}^2\left(\frac{k^2}{k
 
 ---
 
-## 3. Part I: Late-Universe Galactic Kinematics & Strong Lensing Audit
+## 3. Part I: Late-Universe Galactic Kinematics & Strong Lensing Audit (`Phantom_Metric_Part1_Package`)
 
 Below the causal horizon acceleration floor $a_0 = cH_0/(2\pi)$, thermodynamically relaxed single-node systems ($\Theta_{\text{relax}} = 1$) undergo a geometric phase transition:
 
-1. **Macroscopic Strong Gravitational Lensing ($R_E = R_{BB}$):**
-   $$R_E = R_{BB} = \sqrt{\frac{GM_{\text{baryon}}}{a_0}} = \sqrt{\frac{2\pi G M_{\text{baryon}}}{cH_0}}$$
-   * **100 SLACS Elliptical Galaxies:** $R^2 = 0.9917$ ($p \approx 8.7 \times 10^{-104}$), resolving the $\lambda_{\text{int}} \neq 1$ JWST/Keck mass-sheet breakdown with 0% dark matter.
+1. **Macroscopic Strong Gravitational Lensing ($R_{BB}$ and $R_{E,\text{calc}}$):**
+   $$R_{BB} = \sqrt{\frac{GM_{\text{baryon}}}{a_0}}, \qquad R_{E,\text{calc}} = D_L\frac{D_{LS}}{D_S}\frac{4\pi\sqrt{GM_{\text{baryon}}a_0}}{c^2}$$
+   * **110 SLACS & SLACS-S4TM Early-Type Lensing Galaxies:** Operating with 0% dark matter and zero free parameters across the combined $N = 110$ HST Grade-A catalog (all $N = 70$ multi-band lenses with complete published HST stellar masses and SIE lens models from SLACS IX, Auger et al. 2009, plus all $N = 40$ Grade-A lenses from SLACS XIII S4TM, Shu et al. 2017), the metric achieves $R^2 = 0.8261$ ($p \approx 1.6 \times 10^{-27}$, strict 1:1 parity $R^2_{1:1} = 0.8156$, mean ratio $1.042$) on the homogeneous $N = 70$ SLACS IX sample and $R^2 = 0.7955$ ($p \approx 5.1 \times 10^{-39}$, strict 1:1 parity $R^2_{1:1} = 0.7773$) across the full $N = 110$ sample, with a mean observed-to-predicted ratio of $\langle R_{E,\text{obs}}/R_{E,\text{calc}}\rangle = 1.016 \pm 0.198$ (median $1.028$) and an ensemble sum of $370.3\text{ kpc}$ observed vs. $375.7\text{ kpc}$ predicted ($98.6\%$ ensemble parity), naturally resolving the $\lambda_{\text{int}} \neq 1$ JWST/Keck mass-sheet breakdown.
    * **CLASH Galaxy Clusters:** Strict 1:1 parameter-free parity of $R^2_{1:1} = 0.9710$ ($p \approx 1.4 \times 10^{-11}$) across morphologically relaxed clusters using exclusively the observed $\sim 13\%$ intracluster gas + stellar baryonic mass.
 
 2. **Dual Saturation in Flattened Spiral Disks ($V_{\text{calculated}}$):**
    $$\nu(r) = \frac{1}{1 - \exp\left(-\sqrt{a_{\text{baryonic}}(r)/a_\varphi}\right)}, \quad V_{\text{calculated}}(r) = \sqrt{V_{\text{baryonic}}^2(r)\,\nu(r)} \xrightarrow{r\to\infty} (GM_{\text{baryon}}a_0\varphi)^{1/4}$$
    * **Bulge-Less Galaxy NGC 2403:** $R^2 = 0.9694$ with locked stellar mass-to-light ratio $\Upsilon_* = 0.46\ M_\odot/L_\odot$.
    * **Unfiltered 175 SPARC Galaxies (3,391 points, 0% data pruning):**
-     * **Strict Universal Lock ($\Upsilon_* = 0.46$):** $R^2 = 0.9150$ ($p < 10^{-300}$).
-     * **Bounded Stellar Synthesis ($\Upsilon_* \in [0.1, 1.0]$):** $R^2 = 0.9698$ ($p < 10^{-300}$), yielding a global information advantage of $\Delta\text{AIC}_{\text{global}} < -650$ and $\Delta\text{BIC}_{\text{global}} < -2000$ over $\Lambda\text{CDM}$.
+     * **Strict Universal Lock ($\Upsilon_* = 0.46$):** $R^2 = 0.9150$ ($p < 10^{-300}$ point-wise; $p \approx 1.1 \times 10^{-95}$ across $N = 175$ independent galaxies).
+     * **Bounded Stellar Synthesis ($\Upsilon_* \in [0.1, 1.0]$):** $R^2 = 0.9698$ ($p < 10^{-300}$ point-wise; $p \approx 4.8 \times 10^{-132}$ galaxy-wise), yielding a global information advantage of $\Delta\text{AIC}_{\text{global}} < -650$ and $\Delta\text{BIC}_{\text{global}} < -2000$ over $\Lambda\text{CDM}$.
 
-### Late-Universe Empirical Figures
+### Late-Universe Empirical Figures (`./Phantom_Metric_Part1_Package/`)
 
-| SLACS 100 Strong Lenses ($R^2 = 0.9917$) | CLASH Galaxy Clusters ($R^2_{1:1} = 0.9710$) |
+| SLACS 110 Strong Lenses ($R^2 = 0.7955$, SLACS IX $R^2 = 0.8261$) | CLASH Galaxy Clusters ($R^2_{1:1} = 0.9710$) |
 | :---: | :---: |
-| ![SLACS 100 Lensing](./SLACS_100_Figure.png) | ![CLASH Clusters](./Clash_25_Figure.png) |
+| ![SLACS 110 Lensing](./Phantom_Metric_Part1_Package/SLACS_110_Figure.png) | ![CLASH Clusters](./Phantom_Metric_Part1_Package/Clash_25_Figure.png) |
 
 | NGC 2403 Rotation Curve ($R^2 = 0.9694$) | SPARC 175 Galaxies — Locked $\Upsilon_*=0.46$ ($R^2 = 0.9150$) |
 | :---: | :---: |
-| ![NGC 2403](./SPARC_NGC2403_Figure.png) | ![SPARC Locked](./SPARC_Universal%20Global_175G_Figure.png) |
+| ![NGC 2403](./Phantom_Metric_Part1_Package/SPARC_NGC2403_Figure.png) | ![SPARC Locked](./Phantom_Metric_Part1_Package/SPARC_Universal%20Global_175G_Figure.png) |
 
 #### SPARC 175 Galaxies — Stellar Synthesis Bounds $\Upsilon_* \in [0.1, 1.0]$ ($R^2 = 0.9698$, 3,391 Points)
-![SPARC Relaxed](./SPARC_Optimized_R2.png)
+![SPARC Relaxed](./Phantom_Metric_Part1_Package/SPARC_Optimized_R2.png)
 
 ---
 
 ## 4. Reproducibility & Step-by-Step Execution Guide
 
-All empirical datasets (`SPARC_Data.xlsx`, `Rotmod_LTG.zip`, `SLACS_Phantom_Metric_Lensing.csv`, `Clash_Data.csv`, `mcmc_planck_target.npz`, and `mcmc_chain_checkpoint.npz`) are bundled directly in this repository.
+All empirical datasets (`SPARC_Data.xlsx`, `Rotmod_LTG.zip`, `Lensing.xlsx`, `SLACS_DB.csv`, `SLACS_Phantom_Metric_Lensing.csv`, `Clash_Data.csv`, `mcmc_planck_target.npz`, and `mcmc_chain_checkpoint.npz`) are bundled directly in the `Phantom_Metric_Part1_Package/` and `LambdaTSM_ZeroParam_Package/` directories.
 
 ### Prerequisites
 
 <pre><code>pip install numpy scipy pandas matplotlib openpyxl cython</code></pre>
 
-### A. Reproduce Late-Universe Audits (SPARC, SLACS, CLASH)
-Run any of the standalone verification scripts directly from the root directory:
+### A. Reproduce Late-Universe Audits (SPARC, SLACS 110, CLASH) — `Phantom_Metric_Part1_Package`
+Enter the `Phantom_Metric_Part1_Package/` directory and run any of the standalone verification scripts:
 
-<pre><code># 1. Verify Bulge-Less Galaxy NGC 2403 (R^2 = 0.9694, M/L = 0.46)
+<pre><code>cd Phantom_Metric_Part1_Package
+
+# 1. Verify Bulge-Less Galaxy NGC 2403 (R^2 = 0.9694, M/L = 0.46)
 python SPARC_NGC2403_Code.py
 
 # 2. Verify Unfiltered 175 SPARC Galaxies with Universally Locked M/L = 0.46 (R^2 = 0.9150)
@@ -126,8 +128,8 @@ python "SPARC_Universal Global_175G_Code.py"
 # 3. Verify 175 SPARC Galaxies within Physical Stellar Bounds M/L in [0.1, 1.0] (R^2 = 0.9698)
 python "SPARC_Universal Global_175G_M-L_Code.py"
 
-# 4. Verify 100 SLACS Elliptical Strong Gravitational Lenses (R^2 = 0.9917)
-python SLACS_100_Code.py
+# 4. Verify 110 SLACS & S4TM Early-Type Strong Gravitational Lenses (SLACS IX R^2 = 0.8261; Combined R^2 = 0.7955, Mean Obs/Calc = 1.016)
+python SLACS_110_Code.py
 
 # 5. Verify CLASH Galaxy Clusters Strong Lensing (R^2_1:1 = 0.9710)
 python Clash_25_Code.py</code></pre>
@@ -162,18 +164,18 @@ If you use this code, data, or theoretical framework in your research, please ci
 
 <pre><code>@article{Haimovich2026_Part1,
   author  = {Haimovich, Tomer},
-  title   = {Topological saturation of spatial metrics unifies galactic kinematics and strong lensing},
+  title   = {Topological Saturation of Spatial Metrics Unifies Galactic Kinematics and Strong Gravitational Lensing},
   year    = {2026},
-  month   = oct,
-  doi     = {10.5281/zenodo.23490367},
-  url     = {https://doi.org/10.5281/zenodo.23490367}
+  month   = nov,
+  doi     = {10.5281/zenodo.24098753},
+  url     = {https://doi.org/10.5281/zenodo.24098753}
 }
 
 @article{Haimovich2026_Part2,
   author  = {Haimovich, Tomer},
   title   = {The Topological Saturation Model ($\Lambda$TSM): Resolving the Cosmological Horizon, CMB Acoustic Power Spectra, and Late-Universe Structure via Zero-Parameter Covariant DBI Field Theory},
   year    = {2026},
-  month   = oct,
-  doi     = {10.5281/zenodo.23490320},
-  url     = {https://doi.org/10.5281/zenodo.23490320}
+  month   = nov,
+  doi     = {10.5281/zenodo.24098774},
+  url     = {https://doi.org/10.5281/zenodo.24098774}
 }</code></pre>
