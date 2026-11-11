@@ -34,8 +34,8 @@ where $X \equiv -\frac{1}{2}g^{\mu\nu}\nabla_\mu\phi\nabla_\nu\phi$, and the rel
 | **Causal Horizon Floor ($z \approx 0$)** | $a_0 = \frac{cH_0}{2\pi} = \frac{c^2}{2\pi R_H}$ | $1.1288 \times 10^{-10}\text{ m/s}^2$ | $2\pi$ azimuthal closure of surface gravity $\kappa_H = cH_0$ at $g_{tt}=0$ |
 | **Planar Disk Threshold ($\eta \to 0$)** | $a_\varphi = a_0\varphi = \frac{cH_0}{2\pi}\left(\frac{1+\sqrt{5}}{2}\right)$ | $1.8264 \times 10^{-10}\text{ m/s}^2$ | Hurwitz–KAM golden ratio $\varphi = [1;1,1,\dots]$ resonance avoidance |
 | **3D Spheroidal Gating** | $a_{0,\text{eff}}(\eta) = a_0\sqrt{1 - \eta^2}$ | $\in [0, a_0]$ | Maclaurin spheroid eccentricity ($\eta = b/a$); vanishes for $\eta \to 1$ |
-| **Early-Universe Density Ratio** | $\frac{\omega_{\text{phantom}}}{\omega_b} = \frac{16}{3}\left(1 + \frac{1}{16\pi^2}\right)$ | $5.367134$ | $D^2/(D-1) = 16/3$ bulk-to-hypersurface flux + 1-loop $S^3$ horizon $(4\pi)^{-2}$ |
-| **Derived Phantom Density** | $\omega_{\text{phantom}} = 5.367134 \times \omega_b$ | $0.120062$ | Evaluated at Planck $\omega_b = 0.02237$ (**matches Planck $\omega_{\text{cdm}} = 0.1200$ to 0.05%**) |
+| **Early-Universe Density Ratio** | $\frac{\omega_{\text{phantom}}}{\omega_b} = \frac{16}{3}\left(1 + \frac{1}{16\pi^2}\right)$ | $5.367107$ | $D^2/(D-1) = 16/3$ bulk-to-hypersurface flux + 1-loop $S^3$ horizon $(4\pi)^{-2}$ |
+| **Derived Phantom Density** | $\omega_{\text{phantom}} = 5.367107 \times \omega_b$ | $0.120062$ | Evaluated at Planck $\omega_b = 0.02237$ (**matches Planck $\omega_{\text{cdm}} = 0.1200$ to 0.05%**) |
 | **3D Maclaurin Elasticity** | $\mathcal{K}\_0 = \hat{k}^i\hat{k}^j\left(\hat{k}\_i\hat{k}\_j - \frac{1}{3}\delta\_{ij}\right)$ | $\frac{2}{3} \approx 0.6667$ | Trace-free longitudinal shear projection in $d=3$ spatial dimensions |
 | **Horizon Impedance Damping** | $\Gamma\_0 = \frac{1}{2 \cdot 4\pi}$ | $\frac{1}{8\pi} \approx 0.03979\text{ Mpc}^{-1}$ | Inverse Einstein coupling $8\pi$ (asymmetric braking for $\theta\_b > 0$) |
 
