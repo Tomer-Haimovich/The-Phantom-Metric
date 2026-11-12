@@ -1,7 +1,7 @@
 # The Phantom Metric & Topological Saturation Model ($\Lambda\text{TSM}$)
 
-[![Zenodo Part I](https://img.shields.io/badge/Zenodo_Part_I_(Astrophysics)-10.5281%2Fzenodo.23490367-blue.svg)](https://doi.org/10.5281/zenodo.24098753)
-[![Zenodo Part II](https://img.shields.io/badge/Zenodo_Part_II_(Cosmology)-10.5281%2Fzenodo.23490320-blue.svg)](https://doi.org/10.5281/zenodo.24098774)
+[![Zenodo Part I](https://img.shields.io/badge/Zenodo_Part_I_(Astrophysics)-10.5281%2Fzenodo.24098753-blue.svg)](https://doi.org/10.5281/zenodo.24098753)
+[![Zenodo Part II](https://img.shields.io/badge/Zenodo_Part_II_(Cosmology)-10.5281%2Fzenodo.24098774-blue.svg)](https://doi.org/10.5281/zenodo.24098774)
 [![Boltzmann Solver](https://img.shields.io/badge/CLASS-v3.4.0_(C_%2F_Cython)-success.svg)](https://github.com/lesgourg/class_public)
 [![Python](https://img.shields.io/badge/Python-3.9%2B-yellow.svg)](https://www.python.org/)
 [![Dark Matter Parameters](https://img.shields.io/badge/Dark_Matter_Free_Parameters-0-critical.svg)](#)
