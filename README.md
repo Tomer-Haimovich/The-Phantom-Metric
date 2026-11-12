@@ -2,14 +2,17 @@
 
 [![Zenodo Part I](https://img.shields.io/badge/Zenodo_Part_I_(Astrophysics)-10.5281%2Fzenodo.24098753-blue.svg)](https://doi.org/10.5281/zenodo.24098753)
 [![Zenodo Part II](https://img.shields.io/badge/Zenodo_Part_II_(Cosmology)-10.5281%2Fzenodo.24098774-blue.svg)](https://doi.org/10.5281/zenodo.24098774)
+[![Zenodo Predictions](https://img.shields.io/badge/Zenodo_Predictions_(JWST_%2F_Euclid)-10.5281%2Fzenodo.24154676-blue.svg)](https://doi.org/10.5281/zenodo.24154676)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0002--1536--1397-A6CE39.svg)](https://orcid.org/0009-0002-1536-1397)
 [![Boltzmann Solver](https://img.shields.io/badge/CLASS-v3.4.0_(C_%2F_Cython)-success.svg)](https://github.com/lesgourg/class_public)
 [![Python](https://img.shields.io/badge/Python-3.9%2B-yellow.svg)](https://www.python.org/)
 [![Dark Matter Parameters](https://img.shields.io/badge/Dark_Matter_Free_Parameters-0-critical.svg)](#)
 
-**Author:** Tomer Haimovich  
+**Author:** Tomer Haimovich ([ORCID: 0009-0002-1536-1397](https://orcid.org/0009-0002-1536-1397))  
 **Preprints & Permanent Archives:**
 * **Part I (Late-Universe Kinematics, Strong Lensing & Covariant Supplementary Proofs):** [`Topological_Saturation_of_Spatial_Metrics.pdf`](./Topological_Saturation_of_Spatial_Metrics.pdf) — [DOI: 10.5281/zenodo.24098753](https://doi.org/10.5281/zenodo.24098753)
 * **Part II (Early-Universe CMB Spectra, BBN, Linear Matter Power Spectrum & 5-Parameter MCMC):** [`The_Topological_Saturation_Model.pdf`](./The_Topological_Saturation_Model.pdf) — [DOI: 10.5281/zenodo.24098774](https://doi.org/10.5281/zenodo.24098774)
+* **Companion Predictions Paper (Falsifiable Tests for JWST, Euclid, Roman & ALMA/VLBI):** [`Empirical_Predictions_of_the_TSM.pdf`](./Empirical_Predictions_of_the_TSM.pdf) — [DOI: 10.5281/zenodo.24154676](https://doi.org/10.5281/zenodo.24154676)
 
 ---
 
@@ -17,7 +20,7 @@
 
 Standard cosmology ($\Lambda\text{CDM}$) relies on an undiscovered non-baryonic particle species—Cold Dark Matter (CDM)—requiring $k_{\text{dark}} = 351$ free parameters across the Planck CMB ($\omega_{\text{cdm}}$) and the 175 SPARC galaxies ($2 \times 175$ NFW halo parameters $\{M_{200}, c_{200}\}$), in addition to $16\text{--}21$ free halo and subhalo parameters per lensing cluster.
 
-This repository provides the complete analytical derivations, C source code modifications for the **CLASS Boltzmann solver (`v3.4.0`)**, Markov Chain Monte Carlo (**MCMC**) chains, and Python verification scripts for the **Topological Saturation Model ($\Lambda\text{TSM}$)** and **The Phantom Metric**. Derived from a four-dimensional covariant **Dirac–Born–Infeld (DBI)** scalar-tensor action coupled to the causal Hubble horizon, the framework demonstrates that when the spacetime metric reaches its topological saturation limit ($2|X| \to M^4$), the resulting metric deformation generates an emergent pressureless stress-energy tensor ($w_{\text{eff}} \to 0, c_s^2 \to 0$) and a scale-dependent acoustic impedance—reproducing **both early-universe cosmology and late-universe galactic/cluster dynamics with 0% Cold Dark Matter and ZERO free dark-matter parameters ($k_{\text{dark}} = 0$)**.
+This repository provides the complete analytical derivations, C source code modifications for the **CLASS Boltzmann solver (`v3.4.0`)**, Markov Chain Monte Carlo (**MCMC**) chains, empirical falsification protocols, and Python verification scripts for the **Topological Saturation Model ($\Lambda\text{TSM}$)** and **The Phantom Metric**. Derived from a four-dimensional covariant **Dirac–Born–Infeld (DBI)** scalar-tensor action coupled to the causal Hubble horizon, the framework demonstrates that when the spacetime metric reaches its topological saturation limit ($2|X| \to M^4$), the resulting metric deformation generates an emergent pressureless stress-energy tensor ($w_{\text{eff}} \to 0, c_s^2 \to 0$) and a scale-dependent acoustic impedance—reproducing **both early-universe cosmology and late-universe galactic/cluster dynamics with 0% Cold Dark Matter and ZERO free dark-matter parameters ($k_{\text{dark}} = 0$)**.
 
 ---
 
@@ -31,13 +34,13 @@ where $X \equiv -\frac{1}{2}g^{\mu\nu}\nabla_\mu\phi\nabla_\nu\phi$, and the rel
 
 | Physical Regime | Exact Analytical Constant | Numerical Value | First-Principles Geometric Origin |
 | :--- | :--- | :--- | :--- |
-| **Causal Horizon Floor ($z \approx 0$)** | $a_0 = \frac{cH_0}{2\pi} = \frac{c^2}{2\pi R_H}$ | $1.1288 \times 10^{-10}\text{ m/s}^2$ | $2\pi$ azimuthal closure of surface gravity $\kappa_H = cH_0$ at $g_{tt}=0$ |
-| **Planar Disk Threshold ($\eta \to 0$)** | $a_\varphi = a_0\varphi = \frac{cH_0}{2\pi}\left(\frac{1+\sqrt{5}}{2}\right)$ | $1.8264 \times 10^{-10}\text{ m/s}^2$ | Hurwitz–KAM golden ratio $\varphi = [1;1,1,\dots]$ resonance avoidance |
+| **Causal Horizon Floor ($z \approx 0$)** | $a_0 = \frac{cH_0}{2\pi} = \frac{c^2}{2\pi R_H}$ | $1.128 \times 10^{-10}\text{ m s}^{-2}$ | $2\pi$ azimuthal closure of surface gravity $\kappa_H = cH_0$ at $g_{tt}=0$ |
+| **Planar Disk Threshold ($\eta \to 0$)** | $a_\varphi = a_0\varphi = \frac{cH_0}{2\pi}\left(\frac{1+\sqrt{5}}{2}\right)$ | $1.826 \times 10^{-10}\text{ m s}^{-2}$ | Hurwitz–KAM golden ratio $\varphi = [1;1,1,\dots]$ resonance avoidance |
 | **3D Spheroidal Gating** | $a_{0,\text{eff}}(\eta) = a_0\sqrt{1 - \eta^2}$ | $\in [0, a_0]$ | Maclaurin spheroid eccentricity ($\eta = b/a$); vanishes for $\eta \to 1$ |
 | **Early-Universe Density Ratio** | $\frac{\omega_{\text{phantom}}}{\omega_b} = \frac{16}{3}\left(1 + \frac{1}{16\pi^2}\right)$ | $5.367107$ | $D^2/(D-1) = 16/3$ bulk-to-hypersurface flux + 1-loop $S^3$ horizon $(4\pi)^{-2}$ |
 | **Derived Phantom Density** | $\omega_{\text{phantom}} = 5.367107 \times \omega_b$ | $0.120062$ | Evaluated at Planck $\omega_b = 0.02237$ (**matches Planck $\omega_{\text{cdm}} = 0.1200$ to 0.05%**) |
-| **3D Maclaurin Elasticity** | $\mathcal{K}\_0 = \hat{k}^i\hat{k}^j\left(\hat{k}\_i\hat{k}\_j - \frac{1}{3}\delta\_{ij}\right)$ | $\frac{2}{3} \approx 0.6667$ | Trace-free longitudinal shear projection in $d=3$ spatial dimensions |
-| **Horizon Impedance Damping** | $\Gamma\_0 = \frac{1}{2 \cdot 4\pi}$ | $\frac{1}{8\pi} \approx 0.03979\text{ Mpc}^{-1}$ | Inverse Einstein coupling $8\pi$ (asymmetric braking for $\theta\_b > 0$) |
+| **3D Maclaurin Elasticity** | $\mathcal{K}_0 = \hat{k}^i\hat{k}^j\left(\hat{k}_i\hat{k}_j - \frac{1}{3}\delta_{ij}\right)$ | $\frac{2}{3} \approx 0.6667$ | Trace-free longitudinal shear projection in $d=3$ spatial dimensions |
+| **Horizon Impedance Damping** | $\Gamma_0 = \frac{1}{2 \cdot 4\pi}$ | $\frac{1}{8\pi} \approx 0.03979\text{ Mpc}^{-1}$ | Inverse Einstein coupling $8\pi$ (asymmetric braking for $\theta_b > 0$) |
 
 ---
 
@@ -77,11 +80,11 @@ $$\mathcal{K}_{\text{phantom}}(k,a) = \frac{2}{3}\mathcal{H}^2\left(\frac{k^2}{k
 
 ## 3. Part I: Late-Universe Galactic Kinematics & Strong Lensing Audit (`Phantom_Metric_Part1_Package`)
 
-Below the causal horizon acceleration floor $a_0 = cH_0/(2\pi)$, thermodynamically relaxed single-node systems ($\Theta_{\text{relax}} = 1$) undergo a geometric phase transition:
+Below the causal horizon acceleration floor $a_0 = cH_0/(2\pi)$, thermodynamically relaxed single-node systems ($\Theta_{\text{relax}} = 1$) undergo a geometric phase transition, whereas unrelaxed multi-node interactions ($N_{\text{nodes}} > 1$, such as the Milky Way–Andromeda binary infall or *Gaia* DR3 outer Milky Way Keplerian decline, Jiao et al. 2023) shut down boundary formation ($\Theta_{\text{relax}} \to 0$):
 
 1. **Macroscopic Strong Gravitational Lensing ($R_{BB}$ and $R_{E,\text{calc}}$):**
    $$R_{BB} = \sqrt{\frac{GM_{\text{baryon}}}{a_0}}, \qquad R_{E,\text{calc}} = D_L\frac{D_{LS}}{D_S}\frac{4\pi\sqrt{GM_{\text{baryon}}a_0}}{c^2}$$
-   * **110 SLACS & SLACS-S4TM Early-Type Lensing Galaxies:** Operating with 0% dark matter and zero free parameters across the combined $N = 110$ HST Grade-A catalog (all $N = 70$ multi-band lenses with complete published HST stellar masses and SIE lens models from SLACS IX, Auger et al. 2009, plus all $N = 40$ Grade-A lenses from SLACS XIII S4TM, Shu et al. 2017), the metric achieves $R^2 = 0.8261$ ($p \approx 1.6 \times 10^{-27}$, strict 1:1 parity $R^2_{1:1} = 0.8156$, mean ratio $1.042$) on the homogeneous $N = 70$ SLACS IX sample and $R^2 = 0.7955$ ($p \approx 5.1 \times 10^{-39}$, strict 1:1 parity $R^2_{1:1} = 0.7773$) across the full $N = 110$ sample, with a mean observed-to-predicted ratio of $\langle R_{E,\text{obs}}/R_{E,\text{calc}}\rangle = 1.016 \pm 0.198$ (median $1.028$) and an ensemble sum of $370.3\text{ kpc}$ observed vs. $375.7\text{ kpc}$ predicted ($98.6\%$ ensemble parity), naturally resolving the $\lambda_{\text{int}} \neq 1$ JWST/Keck mass-sheet breakdown.
+   * **110 SLACS & SLACS-S4TM Early-Type Lensing Galaxies:** Operating with 0% dark matter and zero free parameters across the combined $N = 110$ HST Grade-A catalog (all $N = 70$ multi-band lenses with complete published HST stellar masses and SIE lens models from SLACS IX, Auger et al. 2009, plus all $N = 40$ Grade-A lenses from SLACS XIII S4TM, Shu et al. 2017), the metric achieves $R^2 = 0.8261$ ($p \approx 1.6 \times 10^{-27}$, strict 1:1 parity $R^2_{1:1} = 0.8156$, mean ratio $1.042$) on the homogeneous $N = 70$ SLACS IX sample and $R^2 = 0.7955$ ($p \approx 5.1 \times 10^{-39}$, strict 1:1 parity $R^2_{1:1} = 0.7773$) across the full $N = 110$ sample, with a mean observed-to-predicted ratio of $\langle R_{E,\text{obs}}/R_{E,\text{calc}}\rangle = 1.016 \pm 0.198$ (median $1.028$, i.e., $1.6\%$ mean parity) and an ensemble sum of $370.3\text{ kpc}$ observed vs. $375.7\text{ kpc}$ predicted ($98.6\%$ ensemble parity), naturally resolving the $\lambda_{\text{int}} \neq 1$ JWST/Keck mass-sheet breakdown.
    * **CLASH Galaxy Clusters:** Strict 1:1 parameter-free parity of $R^2_{1:1} = 0.9710$ ($p \approx 1.4 \times 10^{-11}$) across morphologically relaxed clusters using exclusively the observed $\sim 13\%$ intracluster gas + stellar baryonic mass.
 
 2. **Dual Saturation in Flattened Spiral Disks ($V_{\text{calculated}}$):**
@@ -106,7 +109,20 @@ Below the causal horizon acceleration floor $a_0 = cH_0/(2\pi)$, thermodynamical
 
 ---
 
-## 4. Reproducibility & Step-by-Step Execution Guide
+## 4. Falsifiable Empirical Predictions (`Empirical_Predictions_of_the_TSM.pdf`)
+
+In [`Empirical_Predictions_of_the_TSM.pdf`](./Empirical_Predictions_of_the_TSM.pdf) ([DOI: 10.5281/zenodo.24154676](https://doi.org/10.5281/zenodo.24154676)), we formulate four near-term, zero-parameter observational tests across flagship surveys (**JWST**, **Euclid**, **Nancy Grace Roman Space Telescope**, and **ALMA/VLBI**):
+
+| Prediction | Target Survey / Regime | Standard $\Lambda\text{CDM}$ Expectation | $\Lambda\text{TSM}$ Zero-Parameter Prediction |
+| :--- | :--- | :--- | :--- |
+| **Prediction I: High-Redshift Disk Kinematics ($z > 3$)** | **JWST** (NIRSpec IFU / NIRCam Grism) | Evolving or declining outer rotation curves awaiting hierarchical dark halo assembly. | Immediate asymptotic flattening ($V_{\text{calc}} = \sqrt{V_{\text{baryonic}}^2\nu}$, $V_\infty \propto H_0^{1/4}$ shifting $<1.9\%$) in thin settled disks ($\eta \to 0$), vs. Newtonian decline in thick proto-disks ($\eta \to 1$). Verified at $z=2.64$ in MRG-M0150 ($r_{\text{out}}=2.3R_e=3.3\text{ kpc}$: $V_{\text{calc}}=453.3\text{ km s}^{-1}$ vs. $v_{\text{rot}}\approx 450\text{ km s}^{-1}$, $0.7\%$ parity). |
+| **Prediction II: Uncharted Cluster Lensing Boundaries** | **Euclid** & **DESI+ACT** (kSZ / Weak Lensing) | Requires up to 21 free NFW halo and subhalo parameters per cluster reconstruction. | Relaxed single-node clusters ($\Theta_{\text{relax}}=1$) lock onto $R_E = R_{BB} = \sqrt{GM_{\text{baryon}}/a_0}$ ($R^2_{1:1} > 0.95$) using solely the $\sim 13\%$ baryonic mass budget ($R_{BB} = 110.0\text{ kpc}$ at $M_{\text{baryon}} = 0.98 \times 10^{13}\,M_\odot$), while multi-node mergers rupture the global envelope. |
+| **Prediction III: Isolated Galaxy-Scale Strong Lenses** | **Euclid**, **Roman** & **KST** ($>10^5$ lenses) | Breakdown of power-law halos at $R_{\text{eff}} \approx R_E$ requiring ad-hoc mass-sheet $\lambda_{\text{int}} \neq 1$. | Exact relativistic DBI waveguide deflection $\hat{\alpha} = 4\pi\sqrt{GM_{\text{baryon}}a_0}/c^2$ and $R_{E,\text{calc}} = D_L(D_{LS}/D_S)\hat{\alpha}$ with 0 free parameters, maintaining $\sim 98\text{--}100\%$ ensemble sum parity within $\sim 0.10\text{ dex}$ SPS bounds. |
+| **Prediction IV: Sub-Arc Lensing Perturbers & Breaks** | **Roman** & **ALMA / VLBI** Interferometry | Attributes millilensing anomalies and broken arcs to $10^6\text{--}10^9\,M_\odot$ diffuse NFW dark subhalos. | Perturbers ($\sim 10^6\,M_\odot$ within $10\text{--}140\text{ pc}$) exhibit compact surface densities ($\Sigma \sim 10^3\text{--}10^4\,M_\odot\text{ pc}^{-2}$) coinciding with baryonic giant molecular clouds (GMCs), star-forming clumps ($\lesssim 215\text{ pc}$), and chromatic dust/microlensing rather than dark subhalos. |
+
+---
+
+## 5. Reproducibility & Step-by-Step Execution Guide
 
 All empirical datasets (`SPARC_Data.xlsx`, `Rotmod_LTG.zip`, `Lensing.xlsx`, `SLACS_DB.csv`, `SLACS_Phantom_Metric_Lensing.csv`, `Clash_Data.csv`, `mcmc_planck_target.npz`, and `mcmc_chain_checkpoint.npz`) are bundled directly in the `Phantom_Metric_Part1_Package/` and `LambdaTSM_ZeroParam_Package/` directories.
 
@@ -178,4 +194,13 @@ If you use this code, data, or theoretical framework in your research, please ci
   month   = nov,
   doi     = {10.5281/zenodo.24098774},
   url     = {https://doi.org/10.5281/zenodo.24098774}
+}
+
+@article{Haimovich2026_Predictions,
+  author  = {Haimovich, Tomer},
+  title   = {Empirical Predictions of the Topological Saturation Model ($\Lambda$TSM): Falsifying Dark Matter via High-Redshift Kinematics and Macroscopic Lensing},
+  year    = {2026},
+  month   = nov,
+  doi     = {10.5281/zenodo.24154676},
+  url     = {https://doi.org/10.5281/zenodo.24154676}
 }</code></pre>
