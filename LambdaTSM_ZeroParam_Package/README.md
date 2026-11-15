@@ -4,7 +4,7 @@
 This package contains the complete C source modifications, Boltzmann solver calibration scripts, Big Bang Nucleosynthesis (BBN) expansion proofs, and Markov Chain Monte Carlo (MCMC) statistical audits for **Part II**: *"The Topological Saturation Model (LambdaTSM): Resolving the Cosmological Horizon, CMB Acoustic Power Spectra, and Late-Universe Structure via Zero-Parameter Covariant DBI Field Theory"* (Tomer Haimovich, 2026).
 
 ### Key Theoretical & Numerical Architecture
-1. **4D Orthonormal Tetrad Ratio (`omega_phantom / omega_b = 5.367134`):**
+1. **4D Orthonormal Tetrad Ratio (`omega_phantom / omega_b = 5.367107`):**
    In `source/background.c`, the background topological stress-energy density is locked analytically to the baryon density via the $D^2 = 16$ independent algebraic components of the 4D orthonormal tetrad frame field $e^a_\mu$ on $T\mathcal{M}_4$ projected onto the $(D-1) = 3$ spatial hypersurface $\Sigma_3$, dressed by the 1-loop de Sitter horizon anomaly $(1 + 1/(16\pi^2))$.
 2. **Covariant DBI Zero-Sound-Speed Limit ($c_s^2 = \gamma^{-2} \to 0$):**
    In the kinetically saturated DBI regime ($2|X| \to M^4, w_{\text{eff}} \to 0, c_s^2 \to 0$), the covariant scalar stress-energy conservation law in the synchronous comoving frame ($\theta_\phi = 0$) reduces identically to the comoving dust continuity equation ($\delta'_\phi = -h'/2$), requiring zero particle cold dark matter ($\omega_{\text{cdm}} = 0$).
